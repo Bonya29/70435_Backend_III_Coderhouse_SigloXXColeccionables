@@ -24,3 +24,16 @@ body {
     height: 25px;
     margin-bottom: 5px;
 }
+
+#products {
+    max-width: 1400px;
+}
+
+.img-size {
+    max-width: 225px;
+    max-height: 225px;
+}
+
+.price-stock {
+    margin-top: auto !important;
+}

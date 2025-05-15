@@ -5,12 +5,16 @@ import { envConfig } from './config/envConfig.js'
 import { engine } from 'express-handlebars'
 import { router as viewsRouter } from './routes/viewsRouter.js'
 import { router as mocksRouter } from './routes/api/mocksRouter.js'
+import { router as productsRouter } from './routes/api/productsRouter.js'
+import { router as usersRouter } from './routes/api/usersRouter.js'
 const app = express()
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 app.use(express.static('./src/public'))
 app.use('/', viewsRouter)
 app.use('/api/mocks', mocksRouter)
+app.use('/api/products', productsRouter)
+app.use('/api/users', usersRouter)
 app.set("view engine", "handlebars")
 app.set("views", "./src/views")
 app.engine("handlebars", engine())

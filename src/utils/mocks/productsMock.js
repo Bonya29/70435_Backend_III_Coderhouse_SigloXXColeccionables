@@ -6,7 +6,7 @@ export const generateMockProducts = async (count = 1) => {
 
     for (let i = 0; i < count; i++) {
         const product = {
-            image: faker.image.url(),
+            image: faker.image.url({ width: 225, height: 225 }),
             title: faker.commerce.productName() + " " + faker.string.uuid().slice(0, 4),
             description: faker.commerce.productDescription(),
             price: parseFloat(faker.commerce.price()),
