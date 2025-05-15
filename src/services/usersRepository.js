@@ -6,4 +6,8 @@ export class usersRepository {
     getUsers = async () => {
         return await this.usersDao.getUsers()
     }
+
+    generateUsers = async (users) => {
+        return await this.usersDao.generateUsers(users)
+    }
 }

@@ -1,5 +1,4 @@
 import { faker } from '@faker-js/faker'
-import { productsModel } from '../../dao/models/productsModel.js'
 
 export const generateMockProducts = async (count = 1) => {
     const products = []
@@ -19,5 +18,5 @@ export const generateMockProducts = async (count = 1) => {
         products.push(product)
     }
 
-    return await productsModel.insertMany(products)
+    return products
 }

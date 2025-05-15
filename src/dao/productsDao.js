@@ -8,4 +8,8 @@ export class productsDao {
     getProducts = async () => {
         return await this.model.find().lean()
     }
+
+    generateProducts = async (products) => {
+        return await productsModel.insertMany(products)
+    }
 }

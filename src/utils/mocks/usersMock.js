@@ -1,5 +1,4 @@
 import { faker } from '@faker-js/faker'
-import { usersModel } from '../../dao/models/usersModel.js'
 
 export const generateMockUsers = async (count = 1) => {
     const users = []
@@ -22,5 +21,5 @@ export const generateMockUsers = async (count = 1) => {
         users.push(user)
     }
 
-    return await usersModel.insertMany(users)
+    return users
 }

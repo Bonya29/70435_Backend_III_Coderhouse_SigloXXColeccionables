@@ -8,4 +8,8 @@ export class usersDao {
     getUsers = async () => {
         return await this.model.find().lean()
     }
+
+    generateUsers = async (users) => {
+        return await usersModel.insertMany(users)
+    }
 }

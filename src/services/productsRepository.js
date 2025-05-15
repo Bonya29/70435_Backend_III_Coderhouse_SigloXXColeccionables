@@ -6,4 +6,8 @@ export class productsRepository {
     getProducts = async () => {
         return await this.productsDao.getProducts()
     }
+
+    generateProducts = async (products) => {
+        return await this.productsDao.generateProducts(products)
+    }
 }
