@@ -7,8 +7,12 @@ export class usersController {
     }
 
     getUsers = async (req, res) => {
-        const users = await this.usersService.getUsers()
-        res.send({ users })
+        try {
+            const users = await this.usersService.getUsers()
+            res.send({ users })
+        } catch (error) {
+            res.status(500).json({ error: error.message })
+        }
     }
 
     generateUsers = async (req, res) => {

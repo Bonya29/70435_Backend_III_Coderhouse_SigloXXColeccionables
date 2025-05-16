@@ -6,7 +6,7 @@ async function showProducts() {
     const productsContainer = document.getElementById('products')
     products.forEach(product => {
         productsContainer.innerHTML += `
-            <div class="card shadow" id="${product._id}" style="width: 225px;">
+            <div class="card shadow product-card" id="${product._id}">
                 <img src="${product.image}" class="card-img-top img-size">
                 <div class="card-body d-flex flex-column">
                     <h5 class="card-title">${product.title}</h5>

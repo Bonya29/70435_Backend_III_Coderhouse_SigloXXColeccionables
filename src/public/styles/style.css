@@ -29,6 +29,10 @@ body {
     max-width: 1400px;
 }
 
+.product-card {
+    width: 225px;
+}
+
 .img-size {
     max-width: 225px;
     max-height: 225px;
@@ -36,4 +40,8 @@ body {
 
 .price-stock {
     margin-top: auto !important;
+}
+
+.profile-card {
+    width: 18rem
 }

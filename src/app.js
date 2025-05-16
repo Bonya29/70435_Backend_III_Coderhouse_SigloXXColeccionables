@@ -1,7 +1,8 @@
 import express from 'express'
 import { connectDB } from './utils/connectDB.js'
-import { argumentss } from './utils/arguments.js'
+import { argumentss } from './config/argumentsConfig.js'
 import { envConfig } from './config/envConfig.js'
+import { logger } from './config/loggerConfig.js'
 import { engine } from 'express-handlebars'
 import { router as viewsRouter } from './routes/viewsRouter.js'
 import { router as mocksRouter } from './routes/api/mocksRouter.js'
@@ -20,7 +21,9 @@ app.set("views", "./src/views")
 app.engine("handlebars", engine())
 
 const server = app.listen(envConfig.port, () => {
-    console.log(`\nServer encendido en el puerto ${envConfig.port} \n\nurl: http://localhost:${envConfig.port}/ \n\nModo: ${argumentss.opts().mode}\n`)
+    logger.INFO(`Modo: ${argumentss.opts().mode}\n`)
+    logger.INFO(`Server encendido en el puerto ${envConfig.port}\n`)
+    logger.HTTP(`URL: http://localhost:${envConfig.port}/\n`)
 })
 
 app.get('/', (req, res) => {

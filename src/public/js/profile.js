@@ -6,7 +6,7 @@ async function showUsers() {
     const usersContainer = document.getElementById('users')
     users.forEach(user => {
         usersContainer.innerHTML += `
-        <div class="card shadow" style="width: 18rem;">
+        <div class="card shadow profile-card">
             <ul class="list-group list-group-flush">
                 <li class="list-group-item active">Usuario<br>${user.full_name}</li>
                 <li class="list-group-item">Email<br>${user.email}</li>

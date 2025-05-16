@@ -7,8 +7,12 @@ export class productsController {
     }
 
     getProducts = async (req, res) => {
-        const products = await this.productsService.getProducts()
+        try {
+            const products = await this.productsService.getProducts()
         res.send({ products })
+        } catch (error) {
+            res.status(500).json({ error: error.message })
+        }
     }
 
     generateProducts = async (req, res) => {

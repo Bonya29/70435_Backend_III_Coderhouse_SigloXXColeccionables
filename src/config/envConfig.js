@@ -1,5 +1,5 @@
 import dotenv from 'dotenv'
-import { argumentss } from '../utils/arguments.js'
+import { argumentss } from './argumentsConfig.js'
 
 const path = `.env.${argumentss.opts().mode}`
 
