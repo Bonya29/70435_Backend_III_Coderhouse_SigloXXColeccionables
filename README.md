@@ -2,7 +2,7 @@
 
 ## Pasos para generar products mocks y users mocks
 
-Una vez configuradas las variables de entorno, con el puerto que se utilizara y la URI de la base de datos de mongo donde se quiere generar los mocks, se debera utilizar una plataforma API, como Postman, para realizar las solicitudes.
+Una vez configuradas las variables de entorno, con el puerto (port) que se utilizara y la URI de la base de datos de mongo (mongoURI) donde se quiere generar los mocks, se debera utilizar una plataforma API, como Postman, para realizar las solicitudes.
 
 ### Generar Productos
 
@@ -35,13 +35,13 @@ Una vez generados los productos y/o usuarios por medio de las solicitudes, estos
 #### Productos:
 
 ```http
-http://localhost:<port>/api/mocks/products/:count
+http://localhost:<port>/home
 ```
 
 #### Usuarios:
 
 ```http
-  POST http://localhost:<port>/api/mocks/products/:count
+http://localhost:<port>/profile
 ```
 
 ## FAQ
