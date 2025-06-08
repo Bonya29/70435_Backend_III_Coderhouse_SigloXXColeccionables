@@ -1,0 +1,252 @@
+[
+	{
+		"image": "/assets/products/estampilla_argentina1967.png",
+		"title": "Estampilla Argentina de 1967 - Conmemoración Dia de la Armada 17 de Mayo",
+		"description": "Sello Postal Argentino de 4 pesos, emitido en 1963, conmemorando el Dia de la Armada Argentina, el 17 de mayo.",
+		"price": 10000,
+		"stock": 5,
+		"category": "Estampillas",
+		"code": "A1",
+		"status": true
+	},
+    {
+		"image": "/assets/products/estampilla_republica_argentina1951.png",
+		"title": "Estampilla Argentina de 1951 - Republica Argentina",
+		"description": "Sello Postal Argentino de 1 peso, emitido en 1951 con el mapa de sudamerica, resaltando el territorio argentino.",
+		"price": 10000,
+		"stock": 2,
+		"category": "Estampillas",
+		"code": "A2",
+		"status": true
+	},
+    {
+		"image": "/assets/products/estampilla_ganaderia_argentina.png",
+		"title": "Estampilla Ganaderia Argentina",
+		"description": "Sello Postal Argentino de 20 centavos, correspondiente a la serie de ganaderia.",
+		"price": 5000,
+		"stock": 10,
+		"category": "Estampillas",
+		"code": "A3",
+		"status": true
+	},
+    {
+		"image": "/assets/products/estampilla_fuerte_casa_virreyes_argentina1910.png",
+		"title": "Estampilla Argentina de 1910 - Fuerte y Casa de los Virreyes",
+		"description": "Sello Postal Argentino de 4 centavos, emitido en 1910, conmemora el centenario de la revolución de mayo y muestra la casa de los virreyes.",
+		"price": 15000,
+		"stock": 1,
+		"category": "Estampillas",
+		"code": "A4",
+		"status": true
+	},
+    {
+		"image": "/assets/products/estampilla_china1951.png",
+		"title": "Estampilla China de 1951 - Servicio Postal Aereo Chino",
+		"description": "Sello Postal Chino de 300 yuanes, emitido en 1951, correspondiente al servicio postal aéreo chino.",
+		"price": 12500,
+		"stock": 1,
+		"category": "Estampillas",
+		"code": "A5",
+		"status": true
+	},
+	{
+		"image": "/assets/products/billete_alemania_5marcos.png",
+		"title": "Billete 5 Marcos Alemanes de 1948",
+		"description": "Billete de 5 Marcos de la Alemania Federal emitido en 1948.",
+		"price": 12500,
+		"stock": 10,
+		"category": "Billetes",
+		"code": "B1",
+		"status": true
+	},
+	{
+		"image": "/assets/products/billete_argentina_20centavos.png",
+		"title": "Billete 20 Centavos Argentinos de 1892",
+		"description": "Billete de 20 centavos de la República Argentina emitido en 1892.",
+		"price": 5000,
+		"stock": 3,
+		"category": "Billetes",
+		"code": "B2",
+		"status": true
+	},
+	{
+		"image": "/assets/products/billete_argentina_50pesos.png",
+		"title": "Billete de 50 Pesos Ley Argentinos",
+		"description": "Billete de 50 Pesos Ley 18.188 de la República Argentina, emitido en la decada del 70.",
+		"price": 5000,
+		"stock": 15,
+		"category": "Billetes",
+		"code": "B3",
+		"status": true
+	},
+	{
+		"image": "/assets/products/billete_argentina_100pesos.png",
+		"title": "Billete de 100 Pesos Ley Argentinos",
+		"description": "Billete de 100 Pesos Ley 18.188 de la República Argentina, emitido en la decada del 70.",
+		"price": 7500,
+		"stock": 10,
+		"category": "Billetes",
+		"code": "B4",
+		"status": true
+	},
+	{
+		"image": "/assets/products/billete_brasil_1cruzeiro.png",
+		"title": "Billete de 1 Cruzeiro Brasileño de 1986",
+		"description": "Billete de 1 Cruzeiro de Brasil emitido en 1986.",
+		"price": 1000,
+		"stock": 2,
+		"category": "Billetes",
+		"code": "B5",
+		"status": true
+	},
+	{
+		"image": "/assets/products/moneda_china_suerte.png",
+		"title": "Moneda China de la Suerte",
+		"description": "Moneda China de la suerte, conocida como 'I Ching Coins' o 'Yuan Bao'.",
+		"price": 5000,
+		"stock": 10,
+		"category": "Monedas",
+		"code": "C1",
+		"status": true
+	},
+	{
+		"image": "/assets/products/moneda_china_antigua.png",
+		"title": "Moneda China Antigua",
+		"description": "Moneda China Antigua, utilizada para la buena suerte y la prosperidad.",
+		"price": 6000,
+		"stock": 5,
+		"category": "Monedas",
+		"code": "C2",
+		"status": true
+	},
+	{
+		"image": "/assets/products/moneda_leke_albania.png",
+		"title": "Moneda de 50 Leke Albaneses de 2004",
+		"description": "Moneda de 50 Leke de Albania, emitida en 2004.",
+		"price": 2000,
+		"stock": 8,
+		"category": "Monedas",
+		"code": "C3",
+		"status": true
+	},
+	{
+		"image": "/assets/products/moneda_lepta_grecia.png",
+		"title": "Moneda de 10 Leptas Griegas de 1869",
+		"description": "Moneda de 10 Leptas de Grecia, Emitida en 1869",
+		"price": 20000,
+		"stock": 1,
+		"category": "Monedas",
+		"code": "C4",
+		"status": true
+	},
+	{
+		"image": "/assets/products/moneda_peseta_españa.png",
+		"title": "Moneda de 1 Peseta Española",
+		"description": "Moneda de 1 Peseta de España.",
+		"price": 1000,
+		"stock": 20,
+		"category": "Monedas",
+		"code": "C5",
+		"status": true
+	},
+	{
+		"image": "/assets/products/maqueta_auto_cabriolet.png",
+		"title": "Maqueta de Auto Cabriolet de Chapa",
+		"description": "Maqueta de auto blanco estilo Cabriolet, fabricado en chapa, con detalles de cuero.",
+		"price": 75000,
+		"stock": 4,
+		"category": "Maquetas",
+		"code": "D1",
+		"status": true
+	},
+	{
+		"image": "/assets/products/maqueta_auto_chevy_nova.png",
+		"title": "Maqueta de Auto Chevy Nova",
+		"description": "Maqueta de auto Chevy Nova Azul Cromado 1969, fabricado en plastico de poliestireno",
+		"price": 85000,
+		"stock": 3,
+		"category": "Maquetas",
+		"code": "D2",
+		"status": true
+	},
+	{
+		"image": "/assets/products/maqueta_auto_ford_t.png",
+		"title": "Maqueta de Auto Ford Modelo T",
+		"description": "Maqueta de auto Ford Modelo T, fabricado en metal.",
+		"price": 45000,
+		"stock": 4,
+		"category": "Maquetas",
+		"code": "D3",
+		"status": true
+	},
+	{
+		"image": "/assets/products/maqueta_avion_bf109.png",
+		"title": "Maqueta de Avion Caza BF109",
+		"description": "Maqueta de avion caza aleman BF109, fabricado en metal y plastico.",
+		"price": 71000,
+		"stock": 3,
+		"category": "Maquetas",
+		"code": "D4",
+		"status": true
+	},
+	{
+		"image": "/assets/products/maqueta_avion_f16.png",
+		"title": "Maqueta de Avion F-16 Fighting Falcon",
+		"description": "Maqueta de avion de combate estadounidense Lockheed Martin F-16 Fighting Falcon, fabricado en metal y plastico, con emblemas Argentinos.",
+		"price": 75000,
+		"stock": 5,
+		"category": "Maquetas",
+		"code": "D5",
+		"status": true
+	},
+	{
+		"image": "/assets/products/maqueta_avion_pucara.png",
+		"title": "Maqueta de Avion Pucara",
+		"description": "Maqueta de avion de ataque terrestre argentino FMA IA-58 Pucara, fabricado en metal y plastico.",
+		"price": 60000,
+		"stock": 6,
+		"category": "Maquetas",
+		"code": "D6",
+		"status": true
+	},
+	{
+		"image": "/assets/products/maqueta_avion_a4.png",
+		"title": "Maqueta de Avion A-4 Skyhawk",
+		"description": "Maqueta de avion de ataque ligero estadounidense Douglas A-4 Skyhawk, fabricado en metal y plastico, con emblemas Argentinos.",
+		"price": 72000,
+		"stock": 2,
+		"category": "Maquetas",
+		"code": "D7",
+		"status": true
+	},
+	{
+		"image": "/assets/products/maqueta_tanque_abrams.png",
+		"title": "Maqueta de Tanque M1A1 Abrams",
+		"description": "Maqueta de tanque de batalla principal de estados unidos M1A1 Abrams, fabricado en metal y plastico.",
+		"price": 110000,
+		"stock": 2,
+		"category": "Maquetas",
+		"code": "D8",
+		"status": true
+	},
+	{
+		"image": "/assets/products/maqueta_tanque_tam.png",
+		"title": "Maqueta de Tanque TAM",
+		"description": "Maqueta de tanque argentino TAM (Tanque Argentino Mediano), fabricado en metal y plastico.",
+		"price": 95000,
+		"stock": 3,
+		"category": "Maquetas",
+		"code": "D9",
+		"status": true
+	},
+	{
+		"image": "/assets/products/maqueta_tanque_tiger1.png",
+		"title": "Maqueta de Tanque Tiger I",
+		"description": "Maqueta de tanque aleman pesado Tiger I, fabricado en metal y plastico.",
+		"price": 200000,
+		"stock": 1,
+		"category": "Maquetas",
+		"code": "D10",
+		"status": true
+	}
+]

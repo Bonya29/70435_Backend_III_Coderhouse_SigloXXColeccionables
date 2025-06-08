@@ -6,23 +6,21 @@
 }
 
 body {
-    background-color: #f0f0f0 !important;
+    background-color: #ffe2b0 !important;
     color: #333 !important;
 }
 
 .navbar {
     background-color: #F1D099;
-}
-
-.navbar-logo {
+    .navbar-logo {
     width: 100px;
     height: 100px;
-}
-
-.navbar-icon {
+    }
+    .navbar-icon {
     width: 25px;
     height: 25px;
     margin-bottom: 5px;
+    }
 }
 
 #products {
@@ -30,16 +28,26 @@ body {
 }
 
 .product-card {
-    width: 225px;
-}
-
-.img-size {
-    max-width: 225px;
-    max-height: 225px;
-}
-
-.price-stock {
+    width: 236px;
+    background-color: #F1D099 !important;
+    transition: 0.5s;
+    .card-image {
+        width: 236px;
+        height: 250px;
+        img {
+            padding: 1rem;
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+    }
+    .price-stock {
     margin-top: auto !important;
+    }
+    &:hover {
+        transition: 0.5s;
+        transform: scale(1.05);
+    }
 }
 
 .profile-card {

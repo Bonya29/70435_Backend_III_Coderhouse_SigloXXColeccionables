@@ -1,0 +1,13 @@
+[
+    {
+        "first_name":"Admin",
+        "last_name":"1",
+        "full_name":"Admin 1",
+        "gender":"N/A",
+        "email":"admin1@example.com",
+        "age": 100,
+        "password":"$2b$10$zkoUQ/BOIEMHKZeDgLF0qO.ZXtLcCZ8mkD23FWLneV3ejmKZxkHoS",
+        "cartId":"0",
+        "role":"admin"
+    } 
+]
