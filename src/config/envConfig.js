@@ -7,5 +7,8 @@ dotenv.config({ path })
 
 export const envConfig = {
     port: process.env.port,
-    mongoURI: process.env.mongoURI
+    mongoURI: process.env.mongoURI,
+    privateKey: process.env.privateKey,
+    mailUsername: process.env.mailUsername,
+    mailPassword: process.env.mailPassword
 }

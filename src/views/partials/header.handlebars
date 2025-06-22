@@ -7,40 +7,18 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav">
-                    <a class="nav-link" href="/home"><img src="/assets/icons/home.png" class="navbar-icon"> Home</a>
-                    <a class="nav-link" href="/productsManagement"><img src="/assets/icons/admin.png" class="navbar-icon">Administrar Productos</a>
+                    <a class="nav-link" href="/home"><i class="fa-solid fa-house"></i> Inicio</a>
+                    <a class="nav-link" id="productsManagement" href="/productsManagement"><i class="fa-solid fa-clipboard"></i> Administrar Productos</a>
+                    <a class="nav-link" id="usersManagement" href="/usersManagement"><i class="fa-solid fa-users"></i> Administrar Usuarios</a>
                 </div>
                 <div class="navbar-nav ms-auto">
-                    <a class="nav-link" href="/login"><img src="/assets/icons/login.png" class="navbar-icon">Iniciar Sesion</a>
-                    <a class="nav-link" href="/profile"><img src="/assets/icons/user.png" class="navbar-icon">Mi Perfil</a>
-                    <a class="nav-link" href="/cart"><img src="/assets/icons/cart.png" class="navbar-icon">Carrito</a>
+                    <a class="nav-link" id="login" href="/login"><i class="fa-solid fa-arrow-right-to-bracket"></i> Iniciar Sesion</a>
+                    <a class="nav-link" id="profile" href="/profile"><i class="fa-solid fa-id-card"></i> Mi Perfil</a>
+                    <a class="nav-link" id="cart" href="/cart"><i class="fa-solid fa-cart-shopping"></i> Carrito<span class="cart-count" id="cart-count"></span></a>
                 </div>
             </div>
         </div>
     </nav>
 </header>
 
-{{!-- <header>
-    <div class="pag-nav">
-        <img src="assets/logo.png">
-        <a href="/home"><img src="assets/paw.png" class="nav-icon">
-            <p>Home</p>
-        </a>
-        <a href="/productsManagement" id="productsManagement"><img src="assets/security.png" class="nav-icon">
-            <p>Administrar Productos (Admin)</p>
-        </a>
-    </div>
-    <div class="pag-nav">
-        <a href="/login" id="login"><img src="assets/login.png" class="nav-icon">
-            <p>Iniciar Sesion</p>
-        </a>
-        <a href="/profile" id="profile"><img src="assets/dog.png" class="nav-icon">
-            <p>Mi Perfil</p>
-        </a>
-        <a href="/cart" id="cart"><img src="assets/basket.png" class="nav-icon">
-            <p class="cart-count" id="cart-count"></p>
-        </a>
-    </div>
-</header>
-
-<script src="js/checkRole.js"></script> --}}
+<script src="js/checkRole.js"></script>

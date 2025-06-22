@@ -27,4 +27,42 @@ export class productsController {
             res.status(500).json({ error: error.message })
         }
     }
+
+    getProductById = async (req, res) => {
+        const { pid } = req.params
+        const product = await this.productsService.getProductById(pid)
+        res.send({ product })
+    }
+
+    getProductsByTitle = async (req, res) => {
+        const { title } = req.params
+        const product = await this.productsService.getProductByTitle(title)
+        res.send({ product })
+    }
+
+    createProduct = async (req, res) => {
+        const newProduct = req.body
+        const product = await this.productsService.createProduct(newProduct)
+        res.send({ product })
+    }
+
+    updateProductById = async (req, res) => {
+        const { pid } = req.params
+        const newProduct = req.body
+        const product = await this.productsService.updateProductById(pid, newProduct)
+        res.send({ product })
+    }
+
+    updateProductStockById = async (req, res) => {
+        const { pid } = req.params
+        const { quantity } = req.body
+        const product = await this.productsService.updateProductStockById(pid, quantity)
+        res.send({ product })
+    }
+
+    deleteProductById = async (req, res) => {
+        const { pid } = req.params
+        const product = await this.productsService.deleteProductById(pid)
+        res.send({ product })
+    }
 }

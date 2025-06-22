@@ -10,6 +10,32 @@ export class productsDao {
     }
 
     generateProducts = async (products) => {
-        return await productsModel.insertMany(products)
+        return await this.model.insertMany(products)
+    }
+
+    getProductById = async (id) => {
+        return await this.model.findById(id)
+    }
+
+    getProductByTitle = async (title) => {
+        return await this.model.findOne({title})
+    }
+
+    createProduct = async (newProduct) => {
+        return await this.model.create(newProduct)
+    }
+
+    updateProductById = async (id, newProduct) => {
+        return await this.model.findByIdAndUpdate(id, newProduct)
+    }
+
+    updateProductStockById = async (pid, quantity) => {
+        const product = await this.model.findById(pid)
+            product.stock -= quantity
+        return await product.save()
+    }
+
+    deleteProductById = async (id) => {
+        return await this.model.findByIdAndDelete(id)
     }
 }

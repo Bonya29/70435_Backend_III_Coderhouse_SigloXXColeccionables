@@ -1,5 +1,62 @@
 {{>header}}
 
 <main>
-    <h1 class="text-center mt-5">Proximamente</h1>
+    <h1 class="text-center mt-5 mb-3">Registrarse</h1>
+    <div class="container form-container shadow mb-5">
+        <form>
+            <div class="mb-3 d-flex flex-row gap-3">
+                <div>
+                    <label for="first_name" class="form-label">Nombre</label>
+                    <input type="text" class="form-control" id="first_name">
+                    <div id="firstNameError" class="form-text text-danger"></div>
+                </div>
+                <div>
+                    <label for="last_name" class="form-label">Apellido</label>
+                    <input type="text" class="form-control" id="last_name">
+                    <div id="lastNameError" class="form-text text-danger"></div>
+                </div>
+            </div>
+            <div class="mb-3">
+                <label for="gender" class="form-label">Genero</label>
+                <select class="form-select" id="gender">
+                    <option value="N/A">Seleccionar Genero</option>
+                    <option value="Masculino">Masculino</option>
+                    <option value="Femenino">Femenino</option>
+                </select>
+                <div id="genderError" class="form-text text-danger"></div>
+            </div>
+            <div class="mb-3">
+                <label for="ageRange" class="form-label">Edad</label><br>
+                <output for="ageRange" id="ageValue" aria-hidden="true"></output>
+                <input type="range" class="form-range" min="0" max="100" value="0" id="ageRange">
+                <div id="ageError" class="form-text text-danger"></div>
+            </div>
+            <div class="mb-3">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" class="form-control" id="email">
+                <div id="emailError" class="form-text text-danger"></div>
+            </div>
+            <div class="mb-3">
+                <label for="password" class="form-label">Contraseña</label>
+                <input type="password" class="form-control" id="password">
+                <div id="passwordError" class="form-text text-danger"></div>
+            </div>
+            <div class="mb-3">
+                <label for="repassword" class="form-label">Repetir Contraseña</label>
+                <input type="password" class="form-control" id="repassword">
+                <div id="repasswordError" class="form-text text-danger"></div>
+            </div>
+            <div class="form-check mb-3">
+                <input class="form-check-input" type="checkbox" value="" id="showPasswordCheck">
+                <label class="form-check-label" for="showPasswordCheck">Mostrar Contraseña</label>
+            </div>
+            <div class="d-flex justify-content-between align-items-center">
+                <button type="submit" class="btn btn-primary">Registrarse</button>
+                <span><a href="/login">¿Ya tienes una cuenta? Inicia Sesión</a></span>
+            </div>
+        </form>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="js/register.js"></script>
 </main>

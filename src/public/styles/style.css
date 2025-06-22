@@ -41,9 +41,6 @@ body {
             object-fit: contain;
         }
     }
-    .price-stock {
-    margin-top: auto !important;
-    }
     &:hover {
         transition: 0.5s;
         transform: scale(1.05);
@@ -52,4 +49,12 @@ body {
 
 .profile-card {
     width: 18rem
+}
+
+.form-container {
+    width: 500px !important;
+    border: 1px solid #ccc;
+    border-radius: 1rem;
+    padding: 2rem !important;
+    background-color: white;
 }

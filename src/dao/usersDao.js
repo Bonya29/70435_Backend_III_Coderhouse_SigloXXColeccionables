@@ -10,6 +10,22 @@ export class usersDao {
     }
 
     generateUsers = async (users) => {
-        return await usersModel.insertMany(users)
+        return await this.model.insertMany(users)
+    }
+
+    getUserById = async (id) => {
+        return await this.model.findById(id)
+    }
+
+    getUserByEmail = async (email) => {
+        return await this.model.findOne({ email })
+    }
+
+    createUser = async (newUser) => {
+        return await this.model.create(newUser)
+    }
+
+    deleteUserById = async (id) => {
+        return await this.model.findByIdAndDelete(id)
     }
 }
