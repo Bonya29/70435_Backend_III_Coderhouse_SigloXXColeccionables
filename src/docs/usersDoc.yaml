@@ -39,7 +39,7 @@ components:
         gender: Masculino
         email: juanperez@email.com
         age: 25
-        password: "qwer123"
+        password: qwer12
         cartId: 60f7a4b29b1d8a0015fd2f12
         role: user
 
@@ -105,7 +105,7 @@ paths:
               required: [email, password]
               example:
                 email: juanperez@email.com
-                password: 123456
+                password: qwer12
       responses:
         '200':
           description: Login exitoso y generación de cookie JWT

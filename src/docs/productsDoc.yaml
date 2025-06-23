@@ -28,7 +28,7 @@ components:
           type: boolean
           description: Estado del producto (true = activo)
       example:
-        image: /assets/products/image.png
+        image: /assets/products/noImageYet.png
         title: Avion de Guerra
         description: Avion de guerra de la segunda guerra mundial
         price: 20000

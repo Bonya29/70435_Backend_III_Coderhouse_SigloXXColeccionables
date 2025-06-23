@@ -8,7 +8,10 @@
     "prod": "node --watch ./src/app.js --mode=prod",
     "dev": "node --watch ./src/app.js --mode=dev",
     "test": "node --watch ./src/app.js --mode=test",
-    "supertest": "mocha ./test/flow.test.js"
+    "supertest": "mocha ./test/flow.test.js",
+    "build": "docker build -t sigloxxcoleccionables:1.0.0 .",
+    "retag": "docker tag sigloxxcoleccionables:1.0.0 bonya29/sigloxxcoleccionables:1.0.0",
+    "push": "docker push bonya29/sigloxxcoleccionables:1.0.0"
   },
   "keywords": [],
   "author": "",

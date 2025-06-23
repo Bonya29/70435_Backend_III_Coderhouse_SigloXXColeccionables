@@ -137,7 +137,7 @@ async function deleteProduct(cartId, pid) {
         })
 
         data = await response.json()
-        cartCount.textContent = data.cart.products.length
+        cartCount.innerHTML =  ` (${data.cart.products.length})`
         showCart()
     })
 }

@@ -73,7 +73,6 @@ export class cartsController {
             const to = req.body.purchaser
             const code = req.body.code
             const cart = await this.cartsService.getCardByIdWithPopulate(cid)
-            await this.ticketsService.createTicket({ ...req.body })
 
             await Promise.all(
                 cart.products.map(item => {
@@ -84,6 +83,7 @@ export class cartsController {
             )
 
             await this.cartsService.deleteProductsFromCartByIdAfterPurchase(cid)
+            await this.ticketsService.createTicket({ ...req.body })
 
             sendPurchaseEmail(to, code)
             res.status(200).json({ message: 'Compra realizada, carrito vaciado, ticket creado y mail enviado al cliente'})
