@@ -1,0 +1,177 @@
+components:
+  schemas:
+    CartProduct:
+      type: object
+      properties:
+        product:
+          type: string
+          description: ID del producto (referencia al modelo products)
+        quantity:
+          type: number
+          description: Cantidad del producto en el carrito
+      example:
+        product: 60f7a4b29b1d8a0015fd2f12
+        quantity: 2
+
+    Cart:
+      type: object
+      properties:
+        products:
+          type: array
+          items:
+            $ref: '#/components/schemas/CartProduct'
+      example:
+        products:
+          - product: 60f7a4b29b1d8a0015fd2f12
+            quantity: 2
+          - product: 60f7a4b29b1d8a0015fd2f34
+            quantity: 1
+
+    Purchase:
+      type: object
+      properties:
+        code:
+          type: string
+          description: Código único generado para la compra
+        purchaser:
+          type: string
+          description: Correo del comprador
+        amount:
+          type: number
+          description: Monto total de la compra
+      example:
+        code: bapd1onx9uapd8cyklrktl
+        purchaser: cliente@email.com
+        amount: 40000
+
+paths:
+  /api/carts/{cid}:
+    get:
+      summary: Obtener un carrito por ID
+      tags: [Carts]
+      parameters:
+        - name: cid
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Carrito encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Cart'
+        '500':
+          description: Error interno del servidor
+
+  /api/carts/{cid}/products:
+    get:
+      summary: Obtener un carrito con los productos populados (detalles completos)
+      tags: [Carts]
+      parameters:
+        - name: cid
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Carrito con productos populados
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Cart'
+        '500':
+          description: Error interno del servidor
+
+  /api/carts/{cid}/product/{pid}:
+    post:
+      summary: Agregar un producto a un carrito
+      tags: [Carts]
+      parameters:
+        - name: cid
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: pid
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Producto agregado al carrito
+        '500':
+          description: Error interno del servidor
+
+    put:
+      summary: Eliminar un producto del carrito
+      tags: [Carts]
+      parameters:
+        - name: cid
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: pid
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Producto eliminado del carrito
+        '500':
+          description: Error interno del servidor
+
+  /api/carts/{cid}/product/{pid}/quantity/{action}:
+    put:
+      summary: Actualizar la cantidad de un producto en el carrito (incrementar/decrementar)
+      tags: [Carts]
+      parameters:
+        - name: cid
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: pid
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: action
+          in: path
+          required: true
+          schema:
+            type: string
+            enum: [increment, decrement]
+            description: Acción a aplicar sobre la cantidad del producto
+      responses:
+        '200':
+          description: Cantidad actualizada
+        '500':
+          description: Error interno del servidor
+
+  /api/carts/{cid}/purchase:
+    post:
+      summary: Finalizar compra, generar ticket, descontar stock, vaciar carrito y enviar mail
+      tags: [Carts]
+      parameters:
+        - name: cid
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Purchase'
+      responses:
+        '200':
+          description: Compra realizada con éxito
+        '500':
+          description: Error interno del servidor

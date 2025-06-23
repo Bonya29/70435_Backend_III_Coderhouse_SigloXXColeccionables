@@ -1,12 +1,15 @@
 import express from 'express'
 import cookieParser from 'cookie-parser'
 import passport from 'passport'
+
 import { connectDB } from './utils/connectDB.js'
 import { argumentss } from './config/argumentsConfig.js'
 import { envConfig } from './config/envConfig.js'
 import { logger } from './config/loggerConfig.js'
 import { initializePassport } from './config/passportConfig.js'
 import { errorHandler } from './middlewares/errorHandlerMiddleware.js'
+import { swaggerSpecs } from './utils/swagger.js'
+import { serve, setup } from 'swagger-ui-express'
 import { engine } from 'express-handlebars'
 import { router as viewsRouter } from './routes/viewsRouter.js'
 import { router as mocksRouter } from './routes/api/mocksRouter.js'
@@ -18,6 +21,7 @@ app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 app.use(express.static('./src/public'))
 app.use(cookieParser())
+app.use('/api/docs', serve, setup(swaggerSpecs))
 app.use(passport.initialize())
 app.use('/', viewsRouter)
 app.use('/api/mocks', mocksRouter)

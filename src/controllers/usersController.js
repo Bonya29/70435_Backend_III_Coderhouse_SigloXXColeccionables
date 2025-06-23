@@ -41,6 +41,7 @@ export class usersController {
 
     getUsersByID = async (req, res) => {
         const { id } = req.params
+
         try {
             const user = await this.usersService.getUserById(id)
             if (!user) {
@@ -73,7 +74,6 @@ export class usersController {
             const newCart = await this.cartsService.createCart()
             const userDto = new UserDto({ ...req.body,  password: createHash(password), cartId: newCart._id })
             const newUser = await this.usersService.createUser({ ...userDto })
-
             res.send({ status: 'success', message: 'Registro Exitoso', payload: newUser })
         } catch (error) {
             CustomError.new(errors.fatal)
@@ -127,8 +127,10 @@ export class usersController {
             const { id } = req.params
             const user = await this.usersService.getUserById(id)
             const cid = user.cartId
+
             await this.usersService.deleteUserById(id)
             await this.cartsService.deleteCartById(cid)
+
             res.send({ status: 'success', message: 'Cuenta eliminada' })
         } catch (error) {
             CustomError.new(errors.fatal)

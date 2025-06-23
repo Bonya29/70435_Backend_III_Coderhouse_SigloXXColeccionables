@@ -1,5 +1,7 @@
 import { productsService } from '../services/services.js'
 import { generateMockProducts } from '../utils/mocks/productsMock.js'
+import { CustomError } from '../utils/customErrors.js'
+import { errors } from '../utils/errors.js'
 
 export class productsController {
     constructor() {
@@ -11,7 +13,8 @@ export class productsController {
             const products = await this.productsService.getProducts()
         res.send({ products })
         } catch (error) {
-            res.status(500).json({ error: error.message })
+            CustomError.new(errors.fatal)
+            res.status(error.statusCode || 500).json({ error: error.message })
         }
     }
 
@@ -24,45 +27,76 @@ export class productsController {
             await this.productsService.generateProducts(generatedProducts)
             res.status(201).json({ message: `${count} productos generados`, data: generatedProducts })
         } catch (error) {
-            res.status(500).json({ error: error.message })
+            CustomError.new(errors.fatal)
+            res.status(error.statusCode || 500).json({ error: error.message })
         }
     }
 
     getProductById = async (req, res) => {
-        const { pid } = req.params
-        const product = await this.productsService.getProductById(pid)
-        res.send({ product })
+        try {
+            const { pid } = req.params
+            const product = await this.productsService.getProductById(pid)
+            res.send({ product })
+        } catch (error) {
+            CustomError.new(errors.fatal)
+            res.status(error.statusCode || 500).json({ error: error.message })
+        }
     }
 
     getProductsByTitle = async (req, res) => {
-        const { title } = req.params
-        const product = await this.productsService.getProductByTitle(title)
-        res.send({ product })
+        try {
+            const { title } = req.params
+            const product = await this.productsService.getProductByTitle(title)
+            res.send({ product })
+        } catch (error) {
+            CustomError.new(errors.fatal)
+            res.status(error.statusCode || 500).json({ error: error.message })
+        }
     }
 
     createProduct = async (req, res) => {
-        const newProduct = req.body
-        const product = await this.productsService.createProduct(newProduct)
-        res.send({ product })
+        try {
+            const newProduct = req.body
+            const product = await this.productsService.createProduct(newProduct)
+            res.send({ product })
+        } catch (error) {
+            CustomError.new(errors.fatal)
+            res.status(error.statusCode || 500).json({ error: error.message })
+        }
     }
 
     updateProductById = async (req, res) => {
-        const { pid } = req.params
-        const newProduct = req.body
-        const product = await this.productsService.updateProductById(pid, newProduct)
-        res.send({ product })
+        try {
+            const { pid } = req.params
+            const newProduct = req.body
+            const product = await this.productsService.updateProductById(pid, newProduct)
+            res.send({ product })
+        } catch (error) {
+            CustomError.new(errors.fatal)
+            res.status(error.statusCode || 500).json({ error: error.message })
+        }
     }
 
     updateProductStockById = async (req, res) => {
-        const { pid } = req.params
-        const { quantity } = req.body
-        const product = await this.productsService.updateProductStockById(pid, quantity)
-        res.send({ product })
+        try {
+            const { pid } = req.params
+            const { quantity } = req.body
+            const product = await this.productsService.updateProductStockById(pid, quantity)
+            res.send({ product })
+        } catch (error) {
+            CustomError.new(errors.fatal)
+            res.status(error.statusCode || 500).json({ error: error.message })
+        }
     }
 
     deleteProductById = async (req, res) => {
-        const { pid } = req.params
-        const product = await this.productsService.deleteProductById(pid)
-        res.send({ product })
+        try {
+            const { pid } = req.params
+            const product = await this.productsService.deleteProductById(pid)
+            res.send({ product })
+        } catch (error) {
+            CustomError.new(errors.fatal)
+            res.status(error.statusCode || 500).json({ error: error.message })
+        }
     }
 }

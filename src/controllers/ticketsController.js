@@ -1,4 +1,6 @@
 import { ticketsService } from "../services/services.js"
+import { CustomError } from '../utils/customErrors.js'
+import { errors } from '../utils/errors.js'
 
 export class ticketsController {
     constructor() {
@@ -6,8 +8,14 @@ export class ticketsController {
     }
 
     createTicket = async (req, res) => {
-        const newTicket = req.body
-        const ticket = await this.ticketsService.createTicket(newTicket)
-        res.send({ ticket })
+        try {
+            const newTicket = req.body
+            const ticket = await this.ticketsService.createTicket(newTicket)
+            res.send({ ticket })
+        } catch (error) {
+            CustomError.new(errors.fatal)
+            res.status(error.statusCode || 500).json({ error: error.message })
+        }
+        
     }
 }

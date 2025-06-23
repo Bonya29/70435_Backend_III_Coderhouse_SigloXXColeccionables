@@ -5,6 +5,8 @@ const testPort = 5001
 
 const request = supertest(`http://localhost:${testPort}/api`)
 
+// Nota: En caso de que el test falle en el primer intento, borrar los datos generados en la base de datos de test y volver a intentarlo.
+
 describe('Testing Users API Endpoints', () => {
 
     let userId
