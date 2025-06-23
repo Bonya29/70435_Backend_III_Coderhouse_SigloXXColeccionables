@@ -9,7 +9,6 @@ async function showUserData() {
 
     const data = await response.json()
     const user = data.user
-    console.log(user)
 
     userDataContainer.innerHTML = `
         <div class="card shadow profile-card">

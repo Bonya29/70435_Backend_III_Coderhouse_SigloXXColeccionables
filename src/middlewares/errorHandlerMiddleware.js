@@ -1,6 +1,13 @@
-import { logger } from '../config/loggerConfig.js'
+import { errors } from '../utils/errors.js'
 
 export function errorHandler(err, req, res, next) {
-    logger.ERROR(`[${err.statusCode || 500}] ${err.message}`)
-    res.status(err.statusCode || 500).json({ error: err.message })
+    console.log(err)
+    const { method, originalUrl: url } = req
+    const error = err.message || errors.fatal.message
+    const statusCode = err.statusCode || errors.fatal.statusCode
+    res.status(statusCode).json({
+        error,
+        method,
+        url,
+    })
 }

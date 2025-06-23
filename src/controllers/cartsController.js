@@ -41,22 +41,26 @@ export class cartsController {
     }
 
     deleteProductsFromCartByIdAfterPurchase = async (req, res) => {
-        const { cid } = req.params
-        const to = req.body.purchaser
-        const code = req.body.code
-        const cart = await this.cartsService.getCardByIdWithPopulate(cid)
-        await this.ticketsService.createTicket({ ...req.body })
-        
-        for (const item of cart.products) {
+    const { cid } = req.params
+    const to = req.body.purchaser
+    const code = req.body.code
+
+    const cart = await this.cartsService.getCardByIdWithPopulate(cid)
+
+    await this.ticketsService.createTicket({ ...req.body })
+
+    await Promise.all(
+        cart.products.map(item => {
             const product = item.product
             const quantity = item.quantity
-            await this.productsService.updateProductStockById(product._id, quantity)
-        }
+            return this.productsService.updateProductStockById(product._id, quantity)
+        })
+    )
 
-        const updatedCart = await this.cartsService.deleteProductsFromCartByIdAfterPurchase(cid)
+    await this.cartsService.deleteProductsFromCartByIdAfterPurchase(cid)
 
-        
-        await sendPurchaseEmail(to, code)
-        res.status(200).json({ message: 'Compra realizada, carrito vaciado, ticket creado y mail enviado al cliente'})
-    }
+    sendPurchaseEmail(to, code)
+
+    res.status(200).json({ message: 'Compra realizada, carrito vaciado, ticket creado y mail enviado al cliente'})
+}
 }

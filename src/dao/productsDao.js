@@ -26,7 +26,7 @@ export class productsDao {
     }
 
     updateProductById = async (id, newProduct) => {
-        return await this.model.findByIdAndUpdate(id, newProduct)
+        return await this.model.findByIdAndUpdate(id, newProduct, { new: true }).lean()
     }
 
     updateProductStockById = async (pid, quantity) => {

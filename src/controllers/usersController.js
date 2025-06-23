@@ -74,7 +74,6 @@ export class usersController {
             const userDto = new UserDto({ ...req.body,  password: createHash(password), cartId: newCart._id })
             const newUser = await this.usersService.createUser({ ...userDto })
 
-            console.log("Nuevo usuario creado", newUser)
             res.send({ status: 'success', message: 'Registro Exitoso', payload: newUser })
         } catch (error) {
             CustomError.new(errors.fatal)
