@@ -49,3 +49,17 @@ http://localhost:<port>/profile
 #### ¿Como se cual es mi puerto (port)?
 
 Es el que ingresas en la variable de entorno "port" en el archivo .env que crees. Igualmente, al levantar el proyecto, en la terminal se te indicara con etiquetas INFO y HTTP el puerto en el que esta andando el servidor.
+
+## Enlaces
+
+#### Repositorio Docker Hub
+
+https://hub.docker.com/repository/docker/1bonya/sigloxxcoleccionables/general
+
+#### Docker Pull
+
+docker pull 1bonya/sigloxxcoleccionables:1.0.0
+
+#### Railway (Funcional hasta 10/07/2025)
+
+https://sigloxxcoleccionables.up.railway.app/
